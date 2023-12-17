@@ -41,7 +41,22 @@
   
           type nul > index.js
 
+### examples of REPL 
 ```
-git command
+var x = 0;
+do
+  {
+   x++;
+   console.log('my x value is ${}');
+   }while(x < 5)
 
 ```
+
+```
+ _ is used for get the last result
+```
+
+
+
+
+
