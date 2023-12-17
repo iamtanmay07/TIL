@@ -47,7 +47,7 @@ var x = 0;
 do
   {
    x++;
-   console.log('my x value is ${}');
+   console.log(`my x value is ${x}`);
    }while(x < 5)
 
 ```
@@ -56,7 +56,15 @@ do
  _ is used for get the last result
 ```
 
+```
+.editor -> editormode
+```
 
+### Node.js Core modules 
+- consider modules to be same as JavaScript Libraries,
+- a set of functions that user want to include in the application
+- Node.js has a set of built in modules which you can use without any further installation, basically they are inbuilt
+- 
 
 
 
