@@ -109,5 +109,43 @@ fs.renameSync("read.txt", "new_read.txt");
 ```
 ### Asynchronous Modules 
 
+```
+// Asynchronous Modules 
+
+const fs = require("fs");
+// fs.writeFile("read2.txt", "Hello There !! ");
+
+// above will throw an error, because we need to use callback function 
+// in the asynchronous modules 
+
+fs.writeFile("read2.txt", "Hello there !! ", (err) => {
+    console.log("File read2.txt is created");
+});
+
+
+// asynchronous is all about CALLBACKs 
+// CALLBACK function will check the parameter that we have pass 
+// here in this case that is ERROR err, if there is no error after
+// creating the file then function will print 
+
+
+// appending the data 
+fs.appendFile("read2.txt", " SOmething is appended !" , 
+    (err) => {
+        console.log("appending completed !!");
+    }
+);
+
+// how to read the file
+// this is how you read the data
+// need to pass two variables (parameters)
+fs.readFile("read2.txt", "utf8",
+ (err,dt) => {
+    console.log(dt);
+ }
+);
+
+
+```
 
 
