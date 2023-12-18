@@ -162,5 +162,6 @@ fs.readFile("read2.txt", "utf8",
 ```
 - Asynchronous me pehle saare bahar vaale run hote hai and jis kisime der ya time lagta hai vo baad me run hota hai
   
-  
+  <img width="435" alt="Screenshot 2023-12-18 at 8 19 44 PM" src="https://github.com/iamtanmay07/TIL/assets/96469706/9471e02f-07c7-48b4-ac2d-509c4e4741ee">
+
 
