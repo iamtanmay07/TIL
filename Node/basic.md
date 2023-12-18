@@ -64,7 +64,16 @@ do
 - consider modules to be same as JavaScript Libraries,
 - a set of functions that user want to include in the application
 - Node.js has a set of built in modules which you can use without any further installation, basically they are inbuilt
-- 
+
+### creating new file and writing in that 
+```
+// Node is used for the creating new file, reading that, writing in that too 
+const fs = require("fs");
+
+// creating new file and writing that 
+fs.writeFileSync("read.txt", "Hello World");
+
+```
 
 
 
