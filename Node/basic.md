@@ -144,8 +144,23 @@ fs.readFile("read2.txt", "utf8",
     console.log(dt);
  }
 );
-
-
 ```
 
+### difference between Synchronous and Asynchronous Modules 
+- in the asyn modules we need to pass CALLBACK function
+  ```
+        fs.writeFile("Filename", "content",
+              (err)=>{
+                    console.log("hello");
+              }
+        );
+        console.log("I am outside");
+  ```
+``` output ->
+      I am outside
+      hello 
+```
+- Asynchronous me pehle saare bahar vaale run hote hai and jis kisime der ya time lagta hai vo baad me run hota hai
+  
+  
 
