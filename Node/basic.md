@@ -41,6 +41,7 @@
   
           type nul > index.js
 
+
 ### examples of REPL 
 ```
 var x = 0;
@@ -164,4 +165,24 @@ fs.readFile("read2.txt", "utf8",
   
   <img width="435" alt="Screenshot 2023-12-18 at 8 19 44 PM" src="https://github.com/iamtanmay07/TIL/assets/96469706/9471e02f-07c7-48b4-ac2d-509c4e4741ee">
 
+### Path Modules in Node.js 
+
+```
+const path = require("path");
+
+```
+
+### Exporting own modules 
+```
+const add = (a,b) => {
+      return a+b;
+}
+
+module.exports = add;
+```
+```
+// importing that export module
+const add = require("./fileName");
+console.log(add(5,5));
+```
 
