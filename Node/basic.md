@@ -174,6 +174,7 @@ const path = require("path");
 
 ### Exporting own modules 
 ```
+// exporting this add to the other .js file
 const add = (a,b) => {
       return a+b;
 }
