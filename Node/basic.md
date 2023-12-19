@@ -215,5 +215,25 @@ module.exports = { add, sub, mult };
 
 ## NPM Modules 
 
+- initialise npm with ``` npm init ```
+- to intall the modules use npm i 'module name'
+- for example to download 'chalk module', use  ```npm i chalk```
+- chalk module will be add as dependency in the package.json file
+```
+const chalk = require("chalk");
+const validator = require("validator");
+// console.log(chalk.blue.underline("true")); // this is how we use chalk module
 
-  
+// email validator module
+const res = validator.isEmail("tanmay9248@gmail.com");
+// console.log(res);
+console.log(res==1 ? chalk.blue.underline("true") : chalk.red("false"));
+const res2 = validator.isEmail("tanmaypate.com");
+console.log(res2==1 ? chalk.blue.underline("true") : chalk.red("false"));
+
+```
+
+## Nodeman in Node.js
+
+*Global NPM Modeles* - 
+
