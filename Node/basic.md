@@ -186,4 +186,34 @@ module.exports = add;
 const add = require("./fileName");
 console.log(add(5,5));
 ```
+- exporting multiple files 
+```
+const add = (a,b) => {
+      return a+b;
+}
+const sub = (a,b) => {
+      return a-b;
+}
 
+module.exports.add = add; // important thing to remember 
+module.exports.sub = sub;
+```
+```
+const operator = require("./oper");
+
+console.log(oper.add(5,5));
+console.log(oper.sub(5,5));
+```
+another way of importing is 
+```
+const { add, sub } = require("./oper");
+```
+another way of exporting multiple modules is 
+```
+module.exports = { add, sub, mult };
+```
+
+## NPM Modules 
+
+
+  
