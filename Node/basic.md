@@ -283,4 +283,28 @@ server.listen(8000,"127.0.0.1", () => {
 
 ```
 
+**Dealing with URL**
+> console.log(req.url); // this is used for fetching details of url
+```
+const http = require("http");
+
+const server = http.createServer((req,res) => {
+    // console.log(req.url); // this is used for fetching details of url
+    if(req.url == "/") res.end("Helloo from the home side"); 
+    else if(req.url == "/about") res.end("Hello from aboutUs side");
+});
+
+
+server.listen(8000,"127.0.0.1", () => {
+    console.log("listening to the port number 8000"); // using the callback function 
+});
+
+```
+```
+res.writeHead(404, { "content-type" : "text-html"}); // used for custom message on the site when certain url hit 
+res.end("404 error !!");
+```
+
+
+
 
