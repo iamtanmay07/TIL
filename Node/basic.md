@@ -304,6 +304,7 @@ server.listen(8000,"127.0.0.1", () => {
 res.writeHead(404, { "content-type" : "text-html"}); // used for custom message on the site when certain url hit 
 res.end("404 error !!");
 ```
+<img width="1279" alt="Screenshot 2023-12-20 at 4 52 58 PM" src="https://github.com/iamtanmay07/TIL/assets/96469706/e6e791b1-6867-4189-a2f0-14d61310424b">
 
 
 
