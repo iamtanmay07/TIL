@@ -241,8 +241,46 @@ console.log(res2==1 ? chalk.blue.underline("true") : chalk.red("false"));
 
 - how to install nodemon or any other global variable
 > npm i nodemon -global
+
 or
+
 > npm i nodemon -g
 
+- command + c used for terminating nodemon.
+
+
+## Module Wrappers
+IIFE  - Immediately Invoked Function Expression 
+
+# Node.js Web Server 
+To access web pages of any web application, you need a web server. The web server will handle all the http requests for the web application
+e.g lIS is a web server for ASP.NET web applications and Apache is a web server for PHP or Java web applications.
+
+Node.js provides capabilities to create your own web server which will handle HTTP requests asynchronously. You can use IIS or Apache to run Node.js web application but it is recommended to use Node.js web server.
+
+```
+// The http.createServer() method includes request
+// and response parameters which is supplied by Node.js.
+
+// The request object can be used to get information 
+// about the current HTTP request e.g. url, request header, and data.
+
+// The response object can be used to send a response for a current HTTP request.
+// If the response from the HTTP server is supposed to be displayed as HTML,
+// you should include an HTTP header with the correct content type:
+
+
+const http = require("http");
+
+const server = http.createServer((req,res) => {
+    res.end("Helloo from the other side"); 
+});
+
+
+server.listen(8000,"127.0.0.1", () => {
+    console.log("listening to the port number 8000"); // using the callback function 
+});
+
+```
 
 
