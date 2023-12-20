@@ -233,7 +233,16 @@ console.log(res2==1 ? chalk.blue.underline("true") : chalk.red("false"));
 
 ```
 
-## Nodeman in Node.js
+## Nodemon in Node.js
 
-*Global NPM Modeles* - 
+**Global NPM Modules** -  We can access this global npm from any where in the project.
+
+**Nodemon** - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+- how to install nodemon or any other global variable
+> npm i nodemon -global
+or
+> npm i nodemon -g
+
+
 
