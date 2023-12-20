@@ -306,6 +306,58 @@ res.end("404 error !!");
 ```
 <img width="1279" alt="Screenshot 2023-12-20 at 4 52 58 PM" src="https://github.com/iamtanmay07/TIL/assets/96469706/e6e791b1-6867-4189-a2f0-14d61310424b">
 
+## JSON 
+- stands for JavaScript Object Notation
+- JSON is lightweight format for storing and transporting data
+- JSOn is often is used when data is sent from server
+
+```
+const fs = require("fs");
+const { parse } = require("path");
+const bioData = {
+    name : "tanmay", 
+    age : 26,
+};
+
+// console.log(bioData.age);
+
+// Object to JSON - using stringify 
+
+const jsonData = JSON.stringify(bioData); // converting object to json 
+// console.log(jsonData); 
+
+// output : {"name":"tanmay","age":26}
+// you can see in the key we have double qouted value in json 
+// while object doesn't have that 
+
+
+// we cannot directly call json data like we used for object 
+// i.e. console.log(jsonData.age);
+// above line is wrong !! 
+
+// JSON to Object - using parse
+
+const objData = JSON.parse(jsonData);
+
+// exporting given object as JSON data 
+
+const jsonDt = JSON.stringify(bioData);
+fs.writeFile("json1.json", jsonDt, (err) => {
+    console.log("JSON file is created");
+});
+
+// reading external json file 
+
+fs.readFile("json1.json", "utf8", (err,data)=>{
+    const org_data = parse(data);
+    // console.log(org_data.name);
+    // console.log(org_data.age);
+    console.log("1 : ")
+    console.log(data); 
+    console.log(org_data);
+})
+
+```
 
 
 
