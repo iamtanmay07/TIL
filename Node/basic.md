@@ -360,6 +360,117 @@ fs.readFile("json1.json", "utf8", (err,data)=>{
 ```
 
 ## API 
+```
+const server = http.createServer((req,res) => {
+      const apiData = fs.readFileSynk(`${__dirname}/UserApi/userapi.json`, "utf8");
+      const objData = JSON.parse(apiData); // array of object data 
+      
+      if(req.url == "/") res.end("hello from homeside");
+      else if...
+      else if...
+      else if...
+
+});
+```
+## Events Modules 
+built in modules, called 'Events',
+where you can create- , fire- and listen- for your own events ( like onclick event and so on ) 
+
+```
+const EventEmitter = require("events");
+const event = new EventEmitter(); // creating object of the class EventEmitter
+
+// same as 
+// const event = require("events");
+
+// creating an event emitter instance and firing it only once 
+
+event.on("sayMyName", () => {
+    console.log("Cristiano Ronaldo !!!");
+});
+
+event.emit("sayMyName"); // this emitting our onw name event 
+// that cause previously registered instances to be called, 
+// so emitter must be after the registered instance  
+
+// creating an event and registering couple of callbacks 
+
+event.on("sayMyName", () => {
+    console.log("Cristiano Ronaldo !!!");
+});
+event.on("sayMyName", () => {
+    console.log("Siiiuuuuuu !!!");
+});
+event.on("sayMyName", () => {
+    console.log("Belligoolllll !!!");
+});
+event.emit("sayMyName");
+
+// Registering the event with callbacks 
+
+event.on("checkPage" , (sc, msg) => {
+    console.log(`status code is ${sc} and the page is ${msg}`);
+});
+event.emit("checkPage", 200, "ok");
+
+```
+
+## Streams and Buffer 
+
+Streams are objects that let you read data from a source or write data to a destination in continuous fashion. 
+In Node.js, there are four types of streams : 
+( Streaming means listening to music or watching video in 'real time',instead of downloading a file to your computer and watching it later. )
+- Readable - Stream which is used for read operation.
+- Writable - Stream which is used for write operation.
+- Duplex - Stream which can be used for both read and write operation.
+- Transform - A type of duplex stream where the output is computed based on input.
+
+
+Each type of Stream is an EventEmitter instance and throws several events at different instance of times. For example, some of the commonly used events are -
+- data - This event is fired when there is data is available to read.
+- end - This event is fired when there is no more data to read.
+- error - This event is fired when there is any error receiving or writing data.
+- finish - This event is fired when all the data has been flushed to underlying system
+
+```
+const fs = require("fs");
+const http = require("http");
+
+const server = http.createServer();
+
+// Old method 
+
+ server.on('request', (req, res) => {
+     var fs = require("fs");
+     fs.readFile("input.txt", "utf8" , (err, data) => {
+         if(err) return console.error(err);
+         else res.end(data.toString());
+     });
+ });
+
+// Streaming Method 
+
+server.on('request', (req, res) => {
+    const rstream = fs.createReadStream("input.txt"); // chunk by chunk read 
+
+    rstream.on("data", (chunkData) => {
+        res.write(chunkData);
+    });
+
+    rstream.on("end", () => {
+        res.end();    // for ending
+    })
+
+    rstream.on("error", (err) => {
+        console.log(err);
+        res.end("file not found"); // in case of any error 
+    });
+});
+
+server.listen(9000, "127.0.0.1", () => {
+    console.log("listening to server on port 9000");
+});
+```
 
 
 
