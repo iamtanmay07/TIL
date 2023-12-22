@@ -477,6 +477,7 @@ server.listen(9000, "127.0.0.1", () => {
 > stream.pipe(destination, {optional});
 the method used to take a readable stream and connect it to a writeable stream.
 
+
 ```
 const rstream = fs.createReadStream("input.txt");
 rstream.pipe(res); // cool 
