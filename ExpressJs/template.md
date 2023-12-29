@@ -15,4 +15,8 @@ To render template files, set the following application setting properties, set 
 - Now in the index.hbs write all the html code
 - next step is pretty same as sharing dynamic site in express.
 
-
+```
+for changing dynamic content,
+use same method like props in react
+and send that props as object in res.end() call
+```
