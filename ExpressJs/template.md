@@ -10,8 +10,8 @@ To render template files, set the following application setting properties, set 
 • views, the directory where the template files are located. Eg: app.set ('views', ./views'). This defaults to the views directory in the application root directory.<br>
 • view engine, the template engine to use. For example, to use the Pug template engine: app.set ('view engine', 'pug').
 
-- there must be a `view` folder in the directory.
-- Inside `view` folder, create `index.hbs` file.
+- there must be a `views` folder in the directory.
+- Inside `views` folder, create `index.hbs` file.
 - Now in the index.hbs write all the html code
 - next step is pretty same as sharing dynamic site in express.
 
@@ -19,7 +19,7 @@ To render template files, set the following application setting properties, set 
 
 // to set the view engine
 app.set("view engine", "hbs");
-app.use(express.static("staticPathofThatFile");
+app.use(express.static("staticPathofThatFile"); // here `views` directory 
 
 // in the app.get() fn, we need to use .render()
 app.get("/", (req,res) =>{
