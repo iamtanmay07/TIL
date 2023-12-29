@@ -6,4 +6,13 @@ step 1 :
 >make partials directory
 
 step 2 :
-> 
+>const hbs = require("hbs");
+
+step 3 : 
+>hbs.partialsRegister(partialFolderPath);
+
+- implementing partials of handlebars in .hbs file 
+> {{>header}}
+
+Above one shows header.hbs partial file to be added in the given file 
+
