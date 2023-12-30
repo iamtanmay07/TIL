@@ -7,15 +7,15 @@
 6. `git commit -m "nodejs project first commit"`
 7. `git remote add origin "repo_link"`
 
-// adding ssh to private env
-8. `eval "$(ssh-agent -s)"`  
-// adding ssh private key to our directory 
+- adding ssh to private env
+8. `eval "$(ssh-agent -s)"`
+- adding ssh private key to our directory 
 9. `ssh-add -K ~/.ssh/id_rsa`
-// now add public ssh to github profile 
-// check whether key ssh successful or not 
+- now add public ssh to github profile 
+- check whether key ssh successful or not <br>
 using `ssh -T git@github.com`
 
-// now continuing 
+- now continuing 
 10. `git push -u origin main`
 
 
