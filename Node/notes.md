@@ -67,7 +67,7 @@ do
 - Node.js has a set of built in modules which you can use without any further installation, basically they are inbuilt
 
 ### creating new file and writing in that 
-```
+```node.js
 // Node is used for the creating new file, reading that, writing in that too 
 const fs = require("fs");
 
@@ -110,7 +110,7 @@ fs.renameSync("read.txt", "new_read.txt");
 ```
 ### Asynchronous Modules 
 
-```
+```node.js
 // Asynchronous Modules 
 
 const fs = require("fs");
@@ -258,7 +258,7 @@ e.g lIS is a web server for ASP.NET web applications and Apache is a web server 
 
 Node.js provides capabilities to create your own web server which will handle HTTP requests asynchronously. You can use IIS or Apache to run Node.js web application but it is recommended to use Node.js web server.
 
-```
+```node.js
 // The http.createServer() method includes request
 // and response parameters which is supplied by Node.js.
 
@@ -285,7 +285,7 @@ server.listen(8000,"127.0.0.1", () => {
 
 **Dealing with URL**
 > console.log(req.url); // this is used for fetching details of url
-```
+```node.js
 const http = require("http");
 
 const server = http.createServer((req,res) => {
