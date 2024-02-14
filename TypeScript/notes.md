@@ -157,5 +157,112 @@ const person: {
 }
 ```
 
-## 
+## Type Alias 
+In TypeScript, a type alias is a way to give a name to a specific type or combination of types. It allows you to create a custom name for a type, making it easier to reuse and refer to the same type in different parts of your code. 
+Type aliases provide better readability, organization, and abstraction of complex types.
+
+To define a type alias, you use the type keyword followed by the alias name and the type definition:
+```typescript
+type PersonData = {
+    name : string;
+    age : number;
+    address : {
+        city : string;
+        country : string;
+    }
+}
+
+const person1 : PersonData = {
+    name : "Tanmay",
+    age : 20,
+    address : {
+        city : "Raipur",
+        country : "India"
+    }
+}
+const person2 : PersonData = {
+    name : "Nav",
+    age : 20,
+    address : {
+        city : "Raipur",
+        country : "India"
+    }
+}
+
+// attribute of class can be optional too ( just need to add ? at end :/ )
+
+```
+
+## Method Call Signature ( *IMP ) 
+The function call signature refers to the declaration or definition of a function, which includes the function's name, parameters, and return type. It defines the structure and type information of a function without including the function's implementation or body.
+
+Lets add one function inside the object. It's more like creating a method in object
+
+Very Important call signatures are typically used inside object type notations to describe the shape of functions within object types.
+
+```typescript
+type Student = {
+    name : string;
+    age : number;
+    gender?:"string"; // optional 
+    greet : (country : string) => string;  // this is method call signature !! 
+    // (country : string) : string // this is pure call signature ! 
+    // and you can acces above one with just object_name.(country : "India");
+}
+
+const std1 : Student = {
+    name : "Tanmay",
+    age : 20,
+    greet : (country : string) : string => {
+        return `My name is ${std1.name} and my age is ${std1.age} and I am from ${country}`;
+    }
+}
+
+console.log(std1.greet("India"));
+```
+
+## Enums 
+Enums in TypeScript are commonly used when you want to represent a set of related values
+and choose one value from multiple options. Enums provide a convenient way to define a set of named values and associate them with specific meanings.
+
+In TypeScript, when enum constants are not explicitly assigned numeric values, they are
+automatically assigned incremental numeric values starting from 0. The default numeric value for the first enum constant is 0, and subsequent enum constants receive values incremented by 1.
+
+```typescript
+// declaring enum 
+enum Roles {
+    user = "user",
+    admin = "admin"
+}
+
+type Student = {
+    name?:string;
+    email:string;
+    password:string;
+    role : Roles
+}
+
+const user1 : Student = {
+    email : "hello@gmail.com",
+    password:"user1",
+    role : Roles.user
+}
+
+const user2 : Student = {
+    name : "tanmay",
+    email : "tanmy@gmail.com",
+    password : "1234",
+    role : Roles.admin
+}
+
+const check = (user : Student) : void => {
+    const {email,password, role} = user;
+    (role == "user") ? console.log(`you are just user to site`) : console.log("you'r allowed to edit site");
+}
+check(user1);
+check(user2);
+```
+
+## Tuples 
+
 
