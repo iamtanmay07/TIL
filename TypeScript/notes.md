@@ -264,5 +264,121 @@ check(user2);
 ```
 
 ## Tuples 
+In TypeScript, tuples are a data structure that allows you to store a fixed-size collection of elements of different types. They are similar to arrays, but with a key difference: the types of elements in a tuple are fixed and declared at the time of creation, whereas arrays can hold elements of the same type, and their size can vary.
+
+Real-life example of using tuples in TypeScript:
+ Let's consider a scenario where you want to represent a person's basic information, including their name, age, and whether they have a driver's license. Using a tuple can be an appropriate choice because these three elements have a specific order and type.
+
+```typescript
+// declaration 
+type PersonInfo = readonly [string, number, boolean]; // need to make tuple readonly in order to restrict additional push and other stuff to tuple !!! 
+
+const displayPersonInfo: (person: PersonInfo) → void = (person: PersonInfo): void = {
+    const [name, age, hasDriverLicense] = person;
+    console.log(... data: Name: ${name}, Age: $fage}, Driver's License: $ {hasDriverLicense? "Yes" : "No"});
+｝
+
+// Example usage
+const person1:PersonInfo = ['vinod',29, true];
+const person2: PersonInfo = ['thapa', 17, false];
+
+displayPersonInfo(person: person1)
+displayPersonInfo(person: person2)
+
+```
+## Unions 
+Union types allow you to specify that a variable can hold values of
+multiple types. You use the | (pipe) symbol to define a union type.
+
+In TypeScript, when using a union type, it is essential to ensure that at
+least one of the types in the union includes all the required properties.
+failure to do so will result in a type error during compilation.
+
+```typescript
+// this is union
+const function1 = (value : number | string | boolean) : void => {}
+
+// usage
+const fun = (value : number | string) : string | number => {
+    if(typeof value === "number") return 2*value;
+    else if(typeof value === "string"){
+        return value.toUpperCase();
+    }
+    else{
+        throw new Error("invalid Input Data!");
+    }
+}
+```
+
+## Intersection
+Intersection types allow you to combine multiple types into a single type. 
+You use the & (ampersand) symbol to define an intersection type.
+
+```typescript
+type Person = {
+    name : string;
+    age : number
+}
+
+type Employee = {
+    emp_id : number;
+    department : string
+}
+
+type optionalDetails = Person | Employee
+// in case of bnion any one or any number of details can be filled 
+type EmployeDetails = Person & Employee
+// in case of intersection all four must be there in the new type object ! 
+
+const object1 : EmployeDetails = {
+    name : "tanmay",
+    age : 20,
+    emp_id : 7,
+    department : "IT"
+}
+```
+
+## Generics in typescript 
+generics allows you to build the reusable components or functions that works with multiple data types 
+
+```typescript
+const function1 = <T> (value : T) : void => { // further code !} 
+
+// calling genric function
+const result1 : string = function1<string>(value : "nav");
+const result2 : number = function1<number>(value : 10);
+```
+
+## Interface in typescript 
+similar to type alias 
+
+In TypeScript, an interface is a powerful feature that allows you to define a contract for an object's shape. It specifies the properties and their types that an object must have to be considered of that particular interface type. Interfaces are primarily used for type-checking during development and do not generate any JavaScript code at runtime.
+
+```typescript
+interface Person {
+    name: string;
+    age: number;
+｝
+
+// there's equal sign (=) in the type alias which is not in the interface
+// type Person = {
+//     name: string;
+//     age: number;
+// }
+
+function greet (person: Person) {
+    return "Hello " + person.name;
+}
+
+```
+
+
+
+
+
+
+
+
+
 
 
