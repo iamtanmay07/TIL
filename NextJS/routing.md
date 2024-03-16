@@ -1,3 +1,4 @@
+- NextJS uses file structure based Routing !! 
 
 ### Server Components
 - In Next.js, all components are Server components by default
@@ -28,3 +29,22 @@ here page.tsx of the about folder maps about it and same as profile folder.
 3. Nested Routes Case
 <img width="377" alt="Screenshot 2024-03-17 at 2 55 28 AM" src="https://github.com/iamtanmay07/TIL/assets/96469706/40987bf0-51af-4c79-a53e-dc6d24b6f4cb">
 <br>
+
+**Dynamic Routes** 
+Creating folders is not feasible so we use dynamic routes. 
+> [productId]
+- this is folder inside product folder !
+
+
+### catch all segments 
+(skipping this time)
+
+### 404 not found page 
+for creating custom not found page follow this steps 
+```
+1. create `not-found.tsx` file
+2. write content for not found page, TADOWW !
+
+** you can also use not found page for some conditions also, like product list greater then 100 then display 404 page and you can achieve this by just calling NotFound function that you have build in the not-found.tsx file.
+```
+
