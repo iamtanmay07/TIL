@@ -25,6 +25,13 @@ The React Framework for Production !!!
 - Most Important Folder - SRC folder initally contains app folder
  also contains pages.tsx and layout.tsx
 
-- When we hit the npm run dev, command transfer to the layout.tsx and then and goes to root layout and then pages.tsx filw will be served !
+- When we hit the npm run dev, command transfer to the layout.tsx and then and goes to RootLayout component rendered, which runs the `children` component and which again referred to the pages.tsx file which is `Home` component.
+
+## React Server Components 
+- React Server Components is a new architecture introduced by the React team in version 18 which was quickly embraced by Next.js
+The architecture introduces a new way of creating React components, splitting them into two types:
+1. Server components
+2. Client components.
+
 
 
