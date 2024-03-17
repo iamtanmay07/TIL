@@ -48,3 +48,44 @@ for creating custom not found page follow this steps
 ** you can also use not found page for some conditions also, like product list greater then 100 then display 404 page and you can achieve this by just calling NotFound function that you have build in the not-found.tsx file.
 ```
 
+
+## How to group Routes ?? 
+- For a case of authentication, you need to create register, forgot-password and login route. 
+- Now what happens is new developer dont know about this multiple routes works for a single authentication so we group these routes in auth folder.
+- To ommit the auth folder from the URL, we use parenthesis around name of auth folder "(auth)" 
+> (auth)
+
+## navigating using link component : 
+```next.js
+import Link from "next/link"
+
+<Link href = "/blog"> Go To Blog Page </Link>
+
+// IMP - replace prop in the Link tag
+<Link href="/product/1" replace> Product i </Link>
+
+// on clicking back it leads us to the history state of its parent !
+```
+
+## Navigate to home page 
+- this is achieve by using useRouter hookState in the nextJS
+- also add "use client" on the top because useRouter is client side component !!
+```next.js
+"use client";
+import { useRouter } from "next/navigation";
+
+export default function OrderProduct() {
+    const router = useRouter();
+    const handleClick = () => {
+        console.log("Placing your order");
+        router.push("/") // on clicking button, page will redirect to the home page !! 
+    }
+
+    return(
+    <>
+        <h1>0rder product</h1>
+        <button onClick={handleClick}>Place order</button>
+    </>
+    )
+}
+```
