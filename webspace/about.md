@@ -9,6 +9,7 @@
 
 
 - @grafbase/sdk --save-dev : significantly optimize the workflow with graphbase 
-
-
 ```
+**More About Grafbase**
+To initialise a new project use `npx grafbase init -- --config-format`
+
