@@ -10,3 +10,7 @@
 - Now reopen xampp, click on the `manager-osx`
 - open localhost inside chrome
 - After this you will know the drill
+
+## what is elementor?
+- It is the plugin for the wordpress!
+- 
