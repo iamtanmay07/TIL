@@ -14,3 +14,11 @@
 ## what is elementor?
 - It is the plugin for the wordpress!
 - 
+
+## some common errors faced while working with wordpress-elementor !
+- in the `wp-config-support.php`, you need to change username to `root` (it is mandatory)!!
+
+### while installing plugins, if you ever faced any error then
+<img width="498" alt="Screenshot 2024-05-03 at 2 31 59 PM" src="https://github.com/iamtanmay07/TIL/assets/96469706/b3eb0865-5452-428e-99b4-a49df1b3f6d2">
+
+### 
